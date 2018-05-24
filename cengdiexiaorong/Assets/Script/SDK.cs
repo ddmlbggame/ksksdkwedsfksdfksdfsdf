@@ -36,7 +36,7 @@ public class SDK : MonoBehaviour, IStoreListener
 		// 初始化unity广告
 		if (Advertisement.isSupported)
 		{
-			Advertisement.Initialize(unity_ads_game_id,true);
+			Advertisement.Initialize(unity_ads_game_id);
 		}
 		Instance = this;
 	}
