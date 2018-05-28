@@ -22,12 +22,14 @@ public class XCodeProjectMod {
 			PBXProject proj = new PBXProject();
 
 			proj.ReadFromString(File.ReadAllText(projPath));
+			string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
 
 			// 友盟报错，添加-lz编译flag
-			string target = proj.TargetGuidByName(PBXProject.GetUnityTargetName());
-			string fileGuid = proj.AddFile("relative/path1.cc", "Classes/path1.cc", PBXSourceTree.Source);
-			proj.AddFileToBuildWithFlags(target, fileGuid, "-lz");
-			proj.SetCompileFlagsForFile(target, fileGuid, null);
+			//string fileGuid = proj.AddFile("relative/path1.cc", "Classes/path1.cc", PBXSourceTree.Source);
+			//proj.AddFileToBuildWithFlags(target, fileGuid, "-lz");
+			//proj.SetCompileFlagsForFile(target, fileGuid, null);
+			//设置编译参数
+			proj.AddBuildProperty(target, "OTHER_LDFLAGS", "-lz");
 
 			//友盟报错 对所有的编译配置设置选项  
 			proj.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
