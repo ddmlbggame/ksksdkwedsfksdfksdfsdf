@@ -33,6 +33,7 @@ public class XCodeProjectMod {
 			proj.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
 			proj.AddFrameworkToProject(target, "libsqlite3.tbd", false);
 			File.Copy(Application.dataPath + "/Editor/AutoBuild/Xcode/UnityAppController.mm", path + "/Classes/UnityAppController.mm", true);
+			// 保存工程  
 			proj.WriteToFile(projPath);
 			////Handle xcodeproj
 			//File.Copy(Application.dataPath + "/Editor/xcodeapi/Res/KeychainAccessGroups.plist", path + "/KeychainAccessGroups.plist", true);
