@@ -356,7 +356,10 @@ public class DieJiaControl : MonoBehaviour
 				return false;
 			}
 		}
-		GameControl.Instance.DoGameOver();
+		if (!GameControl.Instance.game_data.editor_mode)
+		{
+			GameControl.Instance.DoGameOver();
+		}
 		return true;
 	}
 }

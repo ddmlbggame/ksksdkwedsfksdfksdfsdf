@@ -32,6 +32,7 @@ public class GameData {
 
 	public bool canshowtip = false;
 
+	public bool editor_mode;
 	public void ResetChallangeData()
 	{
 		ChallangeRestTime = ChallangeTime;

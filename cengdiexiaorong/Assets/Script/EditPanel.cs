@@ -70,6 +70,7 @@ public class EditPanel : MonoBehaviour
 	private Dictionary<ImageControl, imagedata> image_datas = new Dictionary<ImageControl, imagedata>();
 	public void OnSaveData()
 	{
+		GameControl.Instance.game_data.editor_mode = true;
 		GameControl.Instance.game_data.isGamePlay = true;
 		image_datas.Clear();
 		ImageControl first_image = null;
