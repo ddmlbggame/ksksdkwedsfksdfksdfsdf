@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+#if (UNITY_EDITOR)
 public class EditPanel : MonoBehaviour
 {
 	public Transform baseImageGrid;
@@ -195,3 +196,4 @@ public class EditPanel : MonoBehaviour
 		public Vector2 opratepos;
 	}
 }
+#endif
