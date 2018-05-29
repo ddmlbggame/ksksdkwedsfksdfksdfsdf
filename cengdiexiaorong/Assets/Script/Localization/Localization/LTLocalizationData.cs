@@ -8,6 +8,10 @@ public class LTLocalizationData
 
 	public Dictionary<string, string> LanguageData;
 
+	public LTLocalizationData()
+	{
+
+	}
 	public override string ToString()
 	{
 		string result = "LanguageType:" + LanguageType;
