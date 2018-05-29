@@ -17,7 +17,7 @@ public class LocalizationLanguage :MonoBehaviour {
 
 	public void Awake()
 	{
-		localizationText.lange_type = Application.systemLanguage;
+		lange_type = Application.systemLanguage;
 		if (text == null)
 		{
 			text = this.GetComponent<Text>();
@@ -42,10 +42,12 @@ public class LocalizationLanguage :MonoBehaviour {
 			{
 				this.text.text = localization_languages[1];
 			}
+			Debug.Log(lange_type +":"+ SystemLanguage.Chinese);
 		}
 #else
 		if (localization_languages != null && localization_languages.Length >= 2)
 		{
+			
 			if (lange_type == SystemLanguage.Chinese)
 			{
 				this.text.text = localization_languages[0];

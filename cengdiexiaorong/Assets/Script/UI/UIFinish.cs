@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ public class UIFinish : UIBase {
 	public override void OnEnable()
 	{
 		base.OnEnable();
+		SDK.Instance.ShowInterstitial();
 		EventTriggerListener.Get(this._back).onClick = this._OnClickBack;
 		EventTriggerListener.Get(this._restart).onClick = this.OnClickRestart;
 		EventTriggerListener.Get(this._next).onClick = this.OnClickNext;
@@ -64,14 +66,14 @@ public class UIFinish : UIBase {
 		{
 			this._next.SetActive(false);
 			this._restart.SetActive(true);
-			this.current_record.text = GameControl.Instance.game_data.ChallangePassedNumber.ToString();
+			this.current_record.text = "通过" + GameControl.Instance.game_data.ChallangePassedNumber.ToString()+ "关";
 			if (chanllange_level == 0)
 			{
 				this.hight_record.text = "无纪录";
 			}
 			else
 			{
-				this.hight_record.text = chanllange_level.ToString();
+				this.hight_record.text = "通过"+chanllange_level.ToString()+"关";
 			}
 			this.beyond_record.text = GameControl.BeatPeple(UIMain.custom_cost_time, GameControl.Instance.game_data._current_game_type);
 		}
@@ -84,17 +86,16 @@ public class UIFinish : UIBase {
 		UIManager.Instance.PopShow();
 		bool showrate = false;
 		int level = GameData.GetPassedLevel(GameControl.Instance.game_data.Current_Difficulty);
-		if (Random.Range(0,100) >=70 || (GameControl.Instance.game_data.currentGameLevel ==3 && level==4) )
+		if (UnityEngine.Random.Range(0,100) >=70 || (GameControl.Instance.game_data.currentGameLevel ==3 && level==4) )
 		{
 			showrate = true;
 			SDK.Instance.GoToCommnet();
 		}
-		if (!showrate)
-		{
-			SDK.Instance.ShowInterstitial();
-		}
+		//if (!showrate)
+		//{
+		//	SDK.Instance.ShowInterstitial();
+		//}
 	}
-		
 
 	private void OnClickRestart(GameObject obj)
 	{

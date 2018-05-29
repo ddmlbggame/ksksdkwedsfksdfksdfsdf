@@ -221,6 +221,11 @@ public class SDK : MonoBehaviour, IStoreListener
 
 	public void ShowRewardedVideo()
 	{
+		bool pursed = GameData.GetPursedRemoveAds();
+		if (pursed)
+		{
+			return;
+		}
 		ShowOptions options = new ShowOptions();
 		options.resultCallback = HandleShowResult;
 
@@ -283,11 +288,11 @@ public class SDK : MonoBehaviour, IStoreListener
 
 	public void showBannerRelative(AdSize size, int position, int marginY, string instanceName = "defaultBanner")
 	{
-		bool pursed = GameData.GetPursedRemoveAds();
-		if (pursed)
-		{
-			return;
-		}
+		//bool pursed = GameData.GetPursedRemoveAds();
+		//if (pursed)
+		//{
+		//	return;
+		//}
 		if (ad.isInterstitialReady())
 		{
 			ad.showInterstitial();
