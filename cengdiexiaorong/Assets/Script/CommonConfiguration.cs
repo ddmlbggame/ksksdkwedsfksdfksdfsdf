@@ -37,22 +37,26 @@ public class CommonConfiguration
 		{
 			CommonConfiguration.currentLevel = 1;
 		}
-		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing, new BaseImage(ImageType.ZhengFangXing, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize));
-		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing1, new BaseImage(ImageType.SanJiaoXing1, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing3, new BaseImage(ImageType.SanJiaoXing3, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing2, new BaseImage(ImageType.SanJiaoXing2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing4, new BaseImage(ImageType.SanJiaoXing4, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.BigSangJiaoXing1, new BaseImage(ImageType.BigSangJiaoXing1, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.BigSangJiaoXing2, new BaseImage(ImageType.BigSangJiaoXing2, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.BigSangJiaoXing3, new BaseImage(ImageType.BigSangJiaoXing3, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.BigSangJiaoXing4, new BaseImage(ImageType.BigSangJiaoXing4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_2, new BaseImage(ImageType.ZhengFangXing_2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_3, new BaseImage(ImageType.ZhengFangXing_3, 3*kuaiSize/2 + kuaiBianSize * 2, 3 * kuaiSize / 2 + kuaiBianSize));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_5, new BaseImage(ImageType.ZhengFangXing_5, 5 * kuaiSize / 2 + kuaiBianSize * 2, 5 * kuaiSize / 2 + kuaiBianSize));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_6, new BaseImage(ImageType.ZhengFangXing_6, 6 * kuaiSize / 2 + kuaiBianSize * 2, 6 * kuaiSize / 2 + kuaiBianSize));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_7, new BaseImage(ImageType.ZhengFangXing_7, 7 * kuaiSize / 2 + kuaiBianSize * 2, 7 * kuaiSize / 2 + kuaiBianSize));
+		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing_U_2, new BaseImage(ImageType.SanJiaoXing_U_2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing_L_2, new BaseImage(ImageType.SanJiaoXing_L_2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing_D_2, new BaseImage(ImageType.SanJiaoXing_D_2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SanJiaoXing_R_2, new BaseImage(ImageType.SanJiaoXing_R_2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_U_4, new BaseImage(ImageType.SangJiaoXing_U_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_D_4, new BaseImage(ImageType.SangJiaoXing_D_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_L_4, new BaseImage(ImageType.SangJiaoXing_L_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_R_4, new BaseImage(ImageType.SangJiaoXing_R_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.LingXing, new BaseImage(ImageType.LingXing, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.BigLingXing1, new BaseImage(ImageType.BigLingXing1, 3*kuaiSize + kuaiBianSize * 2, 3 * kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXing1, new BaseImage(ImageType.ChangFangXing1, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXing2, new BaseImage(ImageType.ChangFangXing2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXingLeft1, new BaseImage(ImageType.ChangFangXingLeft1, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXingRight1, new BaseImage(ImageType.ChangFangXingRight1, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
-		CommonConfiguration.baseImages.Add((int)ImageType.BigZhengFangXing, new BaseImage(ImageType.BigZhengFangXing, kuaiSize * 2 + kuaiBianSize * 2, kuaiSize * 2 + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.ZhengFangXing_4, new BaseImage(ImageType.ZhengFangXing_4, kuaiSize * 2 + kuaiBianSize * 2, kuaiSize * 2 + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.Parallelogram1, new BaseImage(ImageType.Parallelogram1, 4*kuaiSize/2 + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.Parallelogram2, new BaseImage(ImageType.Parallelogram2, 4 * kuaiSize / 2 + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.Parallelogram3, new BaseImage(ImageType.Parallelogram3, kuaiSize + kuaiBianSize * 2, 4 * kuaiSize / 2 + kuaiBianSize * 2));
@@ -129,39 +133,43 @@ public class CommonConfiguration
 		}
 		switch (imageType)
 		{
-			case ImageType.ZhengFangXing:
-			case ImageType.BigZhengFangXing:
+			case ImageType.ZhengFangXing_2:
+			case ImageType.ZhengFangXing_3:
+			case ImageType.ZhengFangXing_4:
+			case ImageType.ZhengFangXing_5:
+			case ImageType.ZhengFangXing_6:
+			case ImageType.ZhengFangXing_7:
 			case ImageType.BigChangFangXing1:
 			case ImageType.BigChangFangXing2:
 			case ImageType.BigChangFangXing3:
 			case ImageType.BigChangFangXing4:
 				return true;
-			case ImageType.SanJiaoXing1:
-			case ImageType.BigSangJiaoXing1:
+			case ImageType.SanJiaoXing_U_2:
+			case ImageType.SangJiaoXing_U_4:
 			case ImageType.XiaoSangJiaoXingSS1:
 				if (y >= x)
 				{
 					return true;
 				}
 				break;
-			case ImageType.SanJiaoXing2:
-			case ImageType.BigSangJiaoXing2:
+			case ImageType.SanJiaoXing_D_2:
+			case ImageType.SangJiaoXing_D_4:
 			case ImageType.XiaoSangJiaoXingSS2:
 				if (y < x)
 				{
 					return true;
 				}
 				break;
-			case ImageType.SanJiaoXing3:
-			case ImageType.BigSangJiaoXing3:
+			case ImageType.SanJiaoXing_L_2:
+			case ImageType.SangJiaoXing_L_4:
 			case ImageType.XiaoSangJiaoXingSS3:
 				if (y <= -x + imageWidth)
 				{
 					return true;
 				}
 				break;
-			case ImageType.SanJiaoXing4:
-			case ImageType.BigSangJiaoXing4:
+			case ImageType.SanJiaoXing_R_2:
+			case ImageType.SangJiaoXing_R_4:
 			case ImageType.XiaoSangJiaoXingSS4:
 				if (y > -x + imageWidth)
 				{
