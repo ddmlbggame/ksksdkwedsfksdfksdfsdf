@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class CustomInspectorEditor : Editor {
 
 	EditPanel editor_panel;
 
+	public int selGridInt =-1;
+	Vector2 scrollTarget;
 	private void OnEnable()
 	{
 		editor_panel = (EditPanel)target;
@@ -35,12 +38,30 @@ public class CustomInspectorEditor : Editor {
 		}
 
 		EditorGUILayout.EndHorizontal();
+		
 		EditorGUILayout.Space();
-		if (GUILayout.Button("添加一个图片"  ,GUILayout.Height(30)))
+		EditorGUILayout.Space();
+		string[] names = Enum.GetNames(typeof(ImageType));
+		scrollTarget = GUILayout.BeginScrollView(scrollTarget);
+		selGridInt = GUILayout.SelectionGrid(selGridInt, editor_panel.texture, 3);
+		//selGridInt = GUILayout.SelectionGrid(selGridInt, names, 2);
+		GUILayout.EndScrollView();
+
+		//for (int i = 0; i < names.Length; i++)
+		//{
+		//	EditorGUILayout.BeginHorizontal();
+		//	EditorGUILayout.EndHorizontal();
+		//	if (GUILayout.Button(names[i], GUILayout.Height(30), GUILayout.Width(150)))
+		//	{
+		//		ClickAddImage((ImageType)i);
+		//	}
+
+		//}
+		if (GUILayout.Button("添加图片", GUILayout.Height(30)))
 		{
-			editor_panel.AddOneTypeImage();
+			Debug.Log(selGridInt);
+			editor_panel.AddOneTypeImage((ImageType)selGridInt);
 		}
-		EditorGUILayout.Space();
 		EditorGUILayout.Space();
 		if (editor_panel.images != null)
 		{
@@ -58,8 +79,13 @@ public class CustomInspectorEditor : Editor {
 				EditorGUILayout.EndHorizontal();
 				EditorGUILayout.Space();
 			}
-		}
-		
+		}	
+
 		EditorGUILayout.EndVertical();
+	}
+
+	private  void ClickAddImage(ImageType iamge_type)
+	{
+		editor_panel.AddOneTypeImage(iamge_type);
 	}
 }

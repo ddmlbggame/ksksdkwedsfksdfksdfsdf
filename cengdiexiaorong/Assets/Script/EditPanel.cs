@@ -8,13 +8,13 @@ public class EditPanel : MonoBehaviour
 {
 	public Transform baseImageGrid;
 
-	public ImageType ImageType;
-
 	public LevelDifficulty Level_Difficulty;
 
 	public int Level;
 
 	public Dictionary<ImageControl, ImageControl> images;
+
+	public Texture[] texture;
 
 	public static bool nofinish;
 
@@ -141,7 +141,7 @@ public class EditPanel : MonoBehaviour
 	//	}
 	//}
 
-	public void AddOneTypeImage()
+	public void AddOneTypeImage(ImageType type)
 	{
 		GameScene.Instance.Operational_Figure_Control.imageList.Clear();
 		foreach (var item in this.images)
@@ -151,7 +151,7 @@ public class EditPanel : MonoBehaviour
 		int num = GameScene.Instance.Operational_Figure_Control.imageList.Count / 2;
 		int num2 = GameScene.Instance.Operational_Figure_Control.imageList.Count % 2;
 		Vector2 position = new Vector2((float)(-60 + 120 * num2), (float)(-80 - num * 120));
-		var image_control = this._CreateImageOnCaoZuoPan(new ImageData() ,(int)this.ImageType , Vector2.zero);
+		var image_control = this._CreateImageOnCaoZuoPan(new ImageData() ,(int)type, Vector2.zero);
 		this.images.Add(image_control, image_control);
 	}
 
