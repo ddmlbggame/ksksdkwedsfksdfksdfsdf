@@ -51,6 +51,7 @@ public class CommonConfiguration
 		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_L_4, new BaseImage(ImageType.SangJiaoXing_L_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.SangJiaoXing_R_4, new BaseImage(ImageType.SangJiaoXing_R_4, 2 * kuaiSize + kuaiBianSize * 2, 2 * kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.LingXing, new BaseImage(ImageType.LingXing, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
+		CommonConfiguration.baseImages.Add((int)ImageType.LingXing3, new BaseImage(ImageType.LingXing3, 2*kuaiSize + kuaiBianSize * 2, 2*kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.BigLingXing1, new BaseImage(ImageType.BigLingXing1, 3*kuaiSize + kuaiBianSize * 2, 3 * kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXing1, new BaseImage(ImageType.ChangFangXing1, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
 		CommonConfiguration.baseImages.Add((int)ImageType.ChangFangXing2, new BaseImage(ImageType.ChangFangXing2, kuaiSize + kuaiBianSize * 2, kuaiSize + kuaiBianSize * 2));
@@ -201,6 +202,7 @@ public class CommonConfiguration
 				}
 				break;
 			case ImageType.LingXing:
+			case ImageType.LingXing3:
 			case ImageType.BigLingXing1:
 				if ((x <= imageWidth / 2 && y <= imageHeight / 2 && x > imageWidth / 2 - y + 2) || (x >= imageWidth / 2 && y <= imageHeight / 2 && x <= y + imageWidth / 2 - 2) || (x <= imageWidth / 2 && y >= imageHeight / 2 && x > y - imageWidth / 2 + 2) || (x >= imageWidth / 2 && y >= imageHeight / 2 && x <= 3 * imageWidth / 2 - y - 2))
 				{

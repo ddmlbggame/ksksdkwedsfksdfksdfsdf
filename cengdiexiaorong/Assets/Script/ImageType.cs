@@ -65,6 +65,6 @@ public enum ImageType : byte
 
 	BigChangFangXing3 = 30,
 	BigChangFangXing4 = 31,
+	LingXing3 = 48,
 
-	
 }
