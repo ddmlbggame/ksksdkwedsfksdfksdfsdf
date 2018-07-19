@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,15 +10,21 @@ public class UILevel : UIBase {
 
 	public ToggleGroup toggle_group;
 
+	private UILevelGridView grid_view;
+
 	public Toggle[] toggles;
 
-	public Transform _level_parent;
+	public GameObject parent;
 
 	public GameObject _back;
 
 	private List<UILevelItem> level_items = new List<UILevelItem>();
 
 	public static int toggle_index = 0;
+	public void Awake()
+	{
+		grid_view = UILevelGridView.Create(parent);
+	}
 	public override void OnEnable()
 	{
 		base.OnEnable();
@@ -33,28 +40,29 @@ public class UILevel : UIBase {
 	public void Refresh(LevelDifficulty level_difficulty)
 	{
 		var datas = GameControl.Instance.game_data.GetLevelDatas(level_difficulty);
-		int child_count = this._level_parent.transform.childCount;
-		if (child_count < datas.Count)
-		{
-			for (int i = 0; i < datas.Count - child_count; i++)
-			{
-				UILevelItem item = UILevelItem.Create(this._level_parent);
-				this.level_items.Add(item);
-			}
-			
-		}
+		grid_view.reloadData(datas.Values.ToList());
+		//int child_count = this._level_parent.transform.childCount;
+		//if (child_count < datas.Count)
+		//{
+		//	for (int i = 0; i < datas.Count - child_count; i++)
+		//	{
+		//		UILevelItem item = UILevelItem.Create(this._level_parent);
+		//		this.level_items.Add(item);
+		//	}
 
-		for (int i = 0; i < this.level_items.Count; i++)
-		{
-			this.level_items[i].gameObject.SetActive(false);
-		}
-		int index = 0;
-		foreach (var item in datas)
-		{
-			this.level_items[index].Init(item.Value);
-			this.level_items[index].gameObject.SetActive(true);
-			index++;
-		}
+		//}
+
+		//for (int i = 0; i < this.level_items.Count; i++)
+		//{
+		//	this.level_items[i].gameObject.SetActive(false);
+		//}
+		//int index = 0;
+		//foreach (var item in datas)
+		//{
+		//	this.level_items[index].Init(item.Value);
+		//	this.level_items[index].gameObject.SetActive(true);
+		//	index++;
+		//}
 	}
 	public override void OnDisable()
 	{
